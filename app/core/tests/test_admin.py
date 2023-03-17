@@ -33,7 +33,9 @@ class AdminSiteTests(TestCase):
 
     def test_edit_user_page(self):
         """Test the edit user page works"""
-        url = reverse('admin:core_user_change', args=[self.user.id])  ## It is equal to the url http://127.0.0.1:8000/admin/core/user/1/change/
+        # It is equal to the url
+        # http://127.0.0.1:8000/admin/core/user/1/change/
+        url = reverse('admin:core_user_change', args=[self.user.id])
         res = self.client.get(url)
 
         self.assertEqual(res.status_code, 200)
@@ -42,3 +44,5 @@ class AdminSiteTests(TestCase):
         """Test create user page works"""
         url = reverse('admin:core_user_add')
         res = self.client.get(url)
+
+        self.assertEqual(res.status_code, 200)
