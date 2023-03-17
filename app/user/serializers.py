@@ -11,7 +11,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         # Telling the serializer which model we have to use
-        model =get_user_model()
+        model = get_user_model()
         # Fields that can be changed through API
         fields = ['email', 'password', 'name']
         extra_kwargs = {'password':  {'write_only': True, 'min_length': 5}}
