@@ -66,25 +66,25 @@ class PublicUserApiTests(TestCase):
             ).exists()
         self.assertFalse(user_exists)
 
-    # def test_create_token_for_user(self):
-    #     """Test generate token for valid credentials"""
-    #     user_details = {
-    #         'name': 'Test Name',
-    #         'email': 'test@example.com',
-    #         'password': 'test-user-password123',
-    #     }
-    #     # Create user
-    #     create_user(**user_details)
+    def test_create_token_for_user(self):
+        """Test generate token for valid credentials"""
+        user_details = {
+            'name': 'Test Name',
+            'email': 'test@example.com',
+            'password': 'test-user-password123',
+        }
+        # Create user
+        create_user(**user_details)
 
-    #     payload = {
-    #         'email': 'test@example.com',
-    #         'password': 'test-user-password123'
-    #     }
-    #     # Create token
-    #     res = self.client.post(TOKEN_URL, payload)
+        payload = {
+            'email': 'test@example.com',
+            'password': 'test-user-password123'
+        }
+        # Create token
+        res = self.client.post(TOKEN_URL, payload)
 
-    #     self.assertIn('token', res.data)
-    #     self.assertEqual(res.status_code, status.HTTP_200_OK)
+        self.assertIn('token', res.data)
+        self.assertEqual(res.status_code, status.HTTP_200_OK)
 
     def test_create_token_bad_credentials(self):
         """Test returns error if credentials invalid"""
