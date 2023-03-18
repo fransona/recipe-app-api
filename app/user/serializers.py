@@ -27,7 +27,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 class AuthTokenSerializer(serializers.Serializer):
     """Serializer of the user auth token"""
-    email = serializers.EmailField
+    email = serializers.EmailField()
     password = serializers.CharField(
         # hide th password while typing in browser
         style={'input_type': 'password'},
