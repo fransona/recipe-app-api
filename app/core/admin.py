@@ -45,7 +45,11 @@ class UserAdmin(BaseUserAdmin):
     )
 
 
-admin.site.register(models.User, UserAdmin)
 # registering a user model with customized page with ordering and listing.
 # If not mentioned  UserAdmin created.
 # It will have only basic create, read, update operations
+admin.site.register(models.User, UserAdmin)
+
+# register the recipe model with default admin class
+# Unlike user model we don't have customized admin class for recipe
+admin.site.register(models.Recipe)
