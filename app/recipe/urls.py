@@ -14,7 +14,8 @@ from rest_framework.routers import DefaultRouter
 from recipe import views
 
 router = DefaultRouter()
-router.register('recipes', views.RecipeViewSets)
+router.register('recipes', views.RecipeViewSet)
+router.register('tags', views.TagViewSet)
 
 # app name used in the reverse lookup of url
 app_name = 'recipe'

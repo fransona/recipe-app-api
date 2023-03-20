@@ -53,3 +53,5 @@ admin.site.register(models.User, UserAdmin)
 # register the recipe model with default admin class
 # Unlike user model we don't have customized admin class for recipe
 admin.site.register(models.Recipe)
+
+admin.site.register(models.Tag)
