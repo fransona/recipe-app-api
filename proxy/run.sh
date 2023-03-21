@@ -6,4 +6,4 @@ set -e
 envsubst < /etc/nginx/default.conf.tpl > /etc/nginx/conf.d/default.conf
 
 # Will start the ngnix run foreground
-nginx -g 'deamin off;'
+nginx -g 'daemon off;'

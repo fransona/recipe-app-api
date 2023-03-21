@@ -44,7 +44,7 @@ class AuthTokenSerializer(serializers.Serializer):
     password = serializers.CharField(
         # hide th password while typing in browser
         style={'input_type': 'password'},
-        trim_whitespace=False
+        trim_whitespace=False,
     )
 
     def validate(self, attrs):
